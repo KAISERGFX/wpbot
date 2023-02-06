@@ -21,7 +21,7 @@ console.log(chalk.green('\n[🤖] Simple WhatsApp Bot Sticker by Aromakelapa\n')
 
 // On Login
 client.on('qr', (qr) => {
-  spinnies.add('generateQr', {text: 'Generating QR Code'});
+  spinnies.add('generateQr');
   console.log(chalk.yellow('[!] Scan QR Code Bellow'));
   qrcode.generate(qr, {small: true});
   spinnies.succeed('generateQr');
