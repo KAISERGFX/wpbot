@@ -24,7 +24,7 @@ client.on('qr', (qr) => {
   spinnies.add('generateQr', {text: 'Generating QR Code'});
   console.log(chalk.yellow('[!] Scan QR Code Bellow'));
   qrcode.generate(qr, {small: true});
-  spinnies.succeed('generateQr', {text: 'QR Code Generated'});
+  spinnies.succeed('generateQr');
 });
 
 
