@@ -54,8 +54,8 @@ client.on('message', async (msg) => {
 
   try {
     switch (msg.body.toLowerCase()) {
-      case '!stiker':
-      case '!sticker':
+      case '.stiker':
+      case '.sticker':
         if(msg.hasMedia){
           const media = await msg.downloadMedia();
           chat.sendMessage(media, { sendMediaAsSticker: true });
