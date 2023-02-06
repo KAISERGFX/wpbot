@@ -27,7 +27,7 @@ client.on('qr', (qr) => {
   spinnies.succeed('generateQr', {text: 'QR Code Generated'});
 });
 
-spinnies.add('Connecting', { text: 'Connecting'});
+
 
 // Authenticated
 client.on('authenticated', () => {
@@ -51,11 +51,25 @@ client.on('message', async (msg) => {
   const chat = await msg.getChat();
   const contact = await msg.getContact();
   console.log(`⬇️ ${contact.pushname} : ${msg.body}\n`);
+	
+	
 
-  try {
+	
+let stickerMetadata = {
+      pack: "Rey",
+      author: "@xkaiserw",
+      keepScale: true,
+    };
+	
+
+	
+
+	
+
+try {
     switch (msg.body.toLowerCase()) {
-      case '!stiker':
-      case '!sticker':
+      case '.stiker':
+      case '.sticker':
         if(msg.hasMedia){
           const media = await msg.downloadMedia();
           chat.sendMessage(media, { sendMediaAsSticker: true });
